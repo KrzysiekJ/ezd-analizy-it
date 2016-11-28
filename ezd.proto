@@ -1,0 +1,55 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+message Dekretacja {
+  string odbiorcaURI = 1;
+  string wskazowki = 2;
+  repeated string dokumentyDoEdycjiURI = 3;
+}
+
+message NadanieZnaku {
+  string Znak = 1;
+}
+
+message ZmianaMetadanych {
+  string dokumentURI = 1; // Pusty, gdy zmieniamy metadane sprawy.
+  map<string, string> metadane = 2;
+}
+
+message WstawienieDokumentu {
+  // Dodanie, usunięcie lub zmiana dokumentu w aktach sprawy.
+
+  string dokumentURI = 1; // Pusty, gdy kasujemy dokument
+  string etykieta = 2;
+  // Przyjmujemy, że dokumenty zastępujące przejmują uprawnienia dokumentów zastępowanych.
+  string zastepujeURI = 3; // Pusty, gdy dodajemy nowy dokument.
+  bool zaakceptowany = 4;
+}
+
+message ZmianaUprawnien {
+  enum RodzajUprawnienia {
+    NIC = 0;
+    ODCZYT = 1;
+    ZAPIS = 2;
+  }
+  repeated string dokumentyURI = 1;
+  RodzajUprawnienia rodzajUprawnienia = 2;
+  string urzednikURI = 3;
+  string komentarz = 4;
+}
+
+message ElementMetrykiSprawy
+{
+  string poprzedniURI = 1; // URI poprzedniego elementu metryki sprawy (bez opakowującego go podpisu).
+  string wykonawcaURI = 2; // URI urzędnika.
+  // Data wykonania czynności, w formacie RRRR-MM-DD.
+  //
+  // Data ta nie może być wcześniejsza niż data wynikająca ze znakowania podpisu czasem.
+  //
+  // Do dyskusji, czy pole to jest potrzebne; wydaje się, że jego istnienie umożliwia oddzielenie elementów metryki
+  // sprawy od podpisów pod nimi i tym samym umożliwia odczytywanie akt sprawy w sposób uproszczony, bez przetwarzania
+  // kontenerów podpisu i znaczników czasu.
+  string data = 3;
+  repeated google.protobuf.Any czynnosci = 4; // Można pomyśleć o zmianie Any na OneOf.
+  repeated string powiazaneURI = 5;
+}
