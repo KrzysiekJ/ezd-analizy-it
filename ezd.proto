@@ -16,6 +16,10 @@ message ZmianaMetadanych {
   map<string, string> metadane = 2;
 }
 
+message ZmianaProwadzacego {
+  string urzednikURI = 1;
+}
+
 message WstawienieDokumentu {
   // Dodanie, usunięcie lub zmiana dokumentu w aktach sprawy.
 
@@ -43,6 +47,9 @@ message WlaczenieDoAkt {
   // Pozwala na dołączenie historii dokumentu (wraz z nim samym) do akt istniejącej sprawy.
   // Działa rekurencyjnie, tj. włączane jest zarówno działanie, jak i jego przodkowie.
   string ostatnieDzialanieURI = 1;
+}
+
+message ZakonczenieSprawy {
 }
 
 message DzialanieKancelaryjne
