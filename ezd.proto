@@ -38,17 +38,24 @@ message ZmianaUprawnien {
   string komentarz = 4;
 }
 
-message ElementMetrykiSprawy
+message WlaczenieDoAkt {
+  // Włączenie do akt istniejącej historii działań.
+  // Pozwala na dołączenie historii dokumentu (wraz z nim samym) do akt istniejącej sprawy.
+  // Działa rekurencyjnie, tj. włączane jest zarówno działanie, jak i jego przodkowie.
+  string ostatnieDzialanieURI = 1;
+}
+
+message DzialanieKancelaryjne
 {
-  string poprzedniURI = 1; // URI poprzedniego elementu metryki sprawy (bez opakowującego go podpisu).
+  string poprzednieURI = 1; // URI poprzedniego działania (bez opakowującego go podpisu). Może być puste.
   string wykonawcaURI = 2; // URI urzędnika.
   // Data wykonania czynności, w formacie RRRR-MM-DD.
   //
   // Data ta nie może być wcześniejsza niż data wynikająca ze znakowania podpisu czasem.
   //
-  // Do dyskusji, czy pole to jest potrzebne; wydaje się, że jego istnienie umożliwia oddzielenie elementów metryki
-  // sprawy od podpisów pod nimi i tym samym umożliwia odczytywanie akt sprawy w sposób uproszczony, bez przetwarzania
-  // kontenerów podpisu i znaczników czasu.
+  // Do dyskusji, czy pole to jest potrzebne; wydaje się, że jego istnienie umożliwia oddzielenie działań od podpisów
+  // pod nimi i tym samym umożliwia odczytywanie akt sprawy w sposób uproszczony, bez przetwarzania kontenerów
+  // podpisu i znaczników czasu.
   string data = 3;
   repeated google.protobuf.Any czynnosci = 4; // Można pomyśleć o zmianie Any na OneOf.
   repeated string powiazaneURI = 5;

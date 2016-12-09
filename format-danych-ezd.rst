@@ -26,38 +26,44 @@ Elementy metryki sprawy uznajemy za obiekty istotne prawnie (i tym samym podpisy
 Pytania i odpowiedzi
 ~~~~~~~~~~~~~~~~~~~~
 
-W jaki sposób zostanie zapisane zwrócenie sprawy do dekretującego?
+W jaki sposób zostanie przedstawione zwrócenie sprawy do dekretującego?
   Poprzez zwrotną dekretację na dekretującego.
 
-W jaki sposób zostanie zapisana prośba o wkład do dokumentu?
+W jaki sposób zostanie przedstawiona prośba o wkład do dokumentu?
   Poprzez nadanie uprawnień wraz z odpowiednim komentarzem.
 
-W jaki sposób zostanie zapisane odebranie uprawnień?
+W jaki sposób zostanie przedstawione odebranie uprawnień?
   Poprzez zmianę uprawnień z rodzaju ``ODCZYT`` lub ``ZAPIS`` na ``NIC``.
 
-W jaki sposób zostanie zapisane przedstawienie pisma do akceptacji?
+W jaki sposób zostanie przedstawione przedłożenie pisma do akceptacji?
   Poprzez dekretację z oznaczeniem pism przedłożonych do akceptacji jako „do edycji”.
 
-W jaki sposób zostanie zapisana akceptacja proponowanej wersji pisma?
+W jaki sposób zostanie przedstawiona akceptacja proponowanej wersji pisma?
   Poprzez podmianę dokumentu na ten sam, z ustawioną zmienną „zaakceptowany” (ten sposób pozwala też na wprowadzenie zmian przez akceptującego).
 
 W jaki sposób zostanie przedstawiona notatka w sprawie?
   Jako dokument w jednym z formatów tekstowych.
 
-W jaki sposób zostanie zapisana akceptacja dla sposobu załatwienia sprawy?
+W jaki sposób zostanie przedstawiona akceptacja dla sposobu załatwienia sprawy?
   Jako akceptacja notatki opisującej sposób załatwienia sprawy.
 
-W jaki sposób zostanie odwzorowany dokument z podpisem kwalifikowanym?
+W jaki sposób zostanie przedstawiony dokument z podpisem kwalifikowanym?
   Tak samo, jak każdy inny plik; klient EZD może we własnym zakresie przetworzyć plik i wyświetlić informacje o podpisie.
 
-W jaki sposób zostanie odwzorowane przyjęcie dokumentu przez kancelarię?
-  Poprzez utworzenie elementu metryki sprawy dodającego dokument, niezawierającego URI elementu poprzedniego. Zauważmy, że taka „sprawa” nie będzie miała jeszcze nadanego znaku.
+W jaki sposób zostanie przedstawione przyjęcie dokumentu przez kancelarię?
+  Poprzez utworzenie działania dodającego dokument, niezawierającego URI elementu poprzedniego.
 
-W jaki sposób zostanie odwzorowane przekazanie dokumentu przez kancelarię do właściwej komórki?
+W jaki sposób zostanie przedstawione przekazanie dokumentu przez kancelarię do właściwej komórki?
   Poprzez dekretację „sprawy” utworzonej przy przyjęciu dokumentu przez kancelarię do właściwej komórki.
 
-W jaki sposób odbędzie się przekazanie przez kancelarię jednego dokumentu do dwóch komórek merytorycznych?
-  Poprzez utworzenie elementu metryki sprawy dodającego dokument, a następnie utworzenie dwóch dekretacji na właściwe komórki.
+W jaki sposób zostanie przedstawione przekazanie przez kancelarię jednego dokumentu do dwóch komórek merytorycznych?
+  Poprzez utworzenie działania dodającego dokument, a następnie utworzenie dwóch dekretacji na właściwe komórki.
+
+W jaki sposób zostanie przedstawione utworzenie sprawy?
+  Poprzez wykonanie działania nadającego znak sprawy.
+
+W jaki sposób zostanie przedstawione dołączenie zadekretowanego dokumentu do akt istniejącej sprawy?
+  Poprzez włączenie historii dokumentu (ostatniego działania wykonanego na dokumencie) do akt sprawy.
 
 Pytania
 ~~~~~~~
