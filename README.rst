@@ -15,5 +15,6 @@ Spis dokumentów
 * `Nienaruszalność danych w systemie EZD <nienaruszalnosc-danych.rst>`_
 * `Format danych EZD <format-danych-ezd.rst>`_
 * `Zasady konstrukcji API <zasady-konstrukcji-api.rst>`_
+* `Architektura platformy aplikacje.gov.pl <architektura-aplikacje.gov.pl.rst>`_
 
 .. _OpenPGP: http://openpgp.org/
